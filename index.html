@@ -5,129 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aditya • Portfolio</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
         }
 
-        /* Softer pastel gradient */
         body {
-            background: linear-gradient(135deg, #a8c0ff, #fbc2eb, #fde2e4, #cfd9df);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #dfe9f3, #c8d9ff, #e0c3fc, #f3e7e9);
             background-size: 300% 300%;
-            animation: softBG 15s ease infinite;
-            color: #333;
+            animation: gradientShift 18s ease infinite;
+            color: #2b2b2b;
             overflow-x: hidden;
         }
 
-        @keyframes softBG {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
+        /* Navbar */
         nav {
             width: 100%;
-            padding: 20px 40px;
+            padding: 18px 45px;
             display: flex;
             justify-content: space-between;
-            font-size: 18px;
+            align-items: center;
             position: fixed;
             top: 0;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
         }
 
         nav a {
-            color: #333;
+            color: #2b2b2b;
+            font-weight: 500;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             transition: 0.3s;
+            font-family: "Nunito", sans-serif;
         }
 
         nav a:hover {
             opacity: 0.7;
         }
 
+        /* Sections */
         section {
-            padding: 100px 60px;
+            padding: 120px 60px;
             min-height: 100vh;
         }
 
+        /* Hero */
         #hero {
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 60px;
         }
 
         #hero h1 {
-            font-size: 60px;
+            font-size: 64px;
             font-weight: 700;
+            color: #2b2b2b;
         }
 
         #hero p {
+            margin-top: 12px;
             font-size: 22px;
-            margin-top: 10px;
+            font-family: 'Nunito', sans-serif;
+            opacity: 0.85;
         }
 
         .btn {
-            margin-top: 25px;
-            background: #333;
+            margin-top: 28px;
+            background: #4a4ee8;
             color: #fff;
-            padding: 12px 28px;
-            border-radius: 30px;
+            padding: 14px 34px;
+            border-radius: 40px;
             font-size: 18px;
             text-decoration: none;
             transition: 0.3s;
+            box-shadow: 0px 4px 12px rgba(74, 78, 232, 0.35);
         }
 
         .btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 16px rgba(74, 78, 232, 0.45);
         }
 
+        /* Headings */
         h2 {
-            margin-bottom: 20px;
-            font-size: 40px;
-            border-bottom: 3px solid #333;
+            font-size: 42px;
+            font-weight: 700;
+            border-bottom: 4px solid #4a4ee8;
             display: inline-block;
-            padding-bottom: 5px;
+            padding-bottom: 6px;
+            margin-bottom: 20px;
         }
 
+        /* Projects */
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 25px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.55);
+            padding: 28px;
+            border-radius: 22px;
+            backdrop-filter: blur(14px);
             transition: 0.3s;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            background: rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0px 12px 30px rgba(0,0,0,0.10);
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Contact */
+        #contact p {
+            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+            margin-top: 15px;
+            opacity: 0.85;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            font-size: 16px;
             margin-bottom: 20px;
-            opacity: 0.9;
+            font-family: 'Nunito', sans-serif;
+            opacity: 0.85;
         }
 
         @media (max-width: 600px) {
-            #hero h1 { font-size: 40px; }
+            #hero h1 { font-size: 48px; }
             #hero p { font-size: 18px; }
         }
     </style>
@@ -136,7 +172,7 @@
 <body>
 
     <nav>
-        <strong>Aditya</strong>
+        <strong style="font-size:20px;">Aditya</strong>
         <div>
             <a href="#hero">Home</a>
             <a href="#projects">Projects</a>
@@ -144,45 +180,41 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <section id="hero">
         <h1>Hi, I'm Aditya 👋</h1>
         <p>Data Science • Machine Learning • NLP • Analytics</p>
 
-        <a class="btn" href="https://github.com/adidev44480" target="_blank">
-            Visit My GitHub
-        </a>
+        <a class="btn" href="https://github.com/adidev44480" target="_blank">Visit My GitHub</a>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
         <h2>Projects</h2>
 
         <div class="projects">
-
             <div class="project-card">
                 <h3>Laptop Price Prediction</h3>
-                <p>Multiple Linear Regression model predicting laptop prices using numerical system specs.</p>
+                <p>Multiple Linear Regression model predicting laptop prices using technical specs as numerical input features.</p>
             </div>
 
             <div class="project-card">
                 <h3>Reddit Post Classification</h3>
-                <p>NLP classifier trained on scraped Reddit credit-card discussions.</p>
+                <p>NLP classifier trained on scraped Reddit credit-card discussions (titles, usernames, comments).</p>
             </div>
 
             <div class="project-card">
                 <h3>More Projects</h3>
-                <p>Explore more ML, statistics, and analytics projects on my GitHub.</p>
+                <p>Explore more ML, analytics, and statistics projects on my GitHub profile.</p>
             </div>
-
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
         <h2>Contact</h2>
-
-        <p style="font-size: 20px;margin-top:10px;">
-            Email: <strong>your-email@gmail.com</strong><br>
-            LinkedIn: <strong>your-linkedin.com</strong>
-        </p>
+        <p>Email: <strong>your-email@gmail.com</strong><br>
+           LinkedIn: <strong>your-linkedin.com</strong></p>
     </section>
 
     <footer>
