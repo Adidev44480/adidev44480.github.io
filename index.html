@@ -13,15 +13,16 @@
             font-family: "Poppins", sans-serif;
         }
 
+        /* Softer pastel gradient */
         body {
-            background: linear-gradient(135deg, #7f00ff, #e100ff, #ff6a00, #ff3c6f);
+            background: linear-gradient(135deg, #a8c0ff, #fbc2eb, #fde2e4, #cfd9df);
             background-size: 300% 300%;
-            animation: gradientBG 12s ease infinite;
-            color: #fff;
+            animation: softBG 15s ease infinite;
+            color: #333;
             overflow-x: hidden;
         }
 
-        @keyframes gradientBG {
+        @keyframes softBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -35,11 +36,11 @@
             font-size: 18px;
             position: fixed;
             top: 0;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             margin-left: 20px;
             transition: 0.3s;
@@ -74,8 +75,8 @@
 
         .btn {
             margin-top: 25px;
-            background: #fff;
-            color: #000;
+            background: #333;
+            color: #fff;
             padding: 12px 28px;
             border-radius: 30px;
             font-size: 18px;
@@ -85,12 +86,13 @@
 
         .btn:hover {
             transform: scale(1.05);
+            opacity: 0.9;
         }
 
         h2 {
             margin-bottom: 20px;
             font-size: 40px;
-            border-bottom: 3px solid #fff;
+            border-bottom: 3px solid #333;
             display: inline-block;
             padding-bottom: 5px;
         }
@@ -103,16 +105,17 @@
         }
 
         .project-card {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.6);
             padding: 25px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
             transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            background: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.8);
         }
 
         footer {
@@ -132,7 +135,6 @@
 
 <body>
 
-    <!-- NAVBAR -->
     <nav>
         <strong>Aditya</strong>
         <div>
@@ -142,7 +144,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section id="hero">
         <h1>Hi, I'm Aditya 👋</h1>
         <p>Data Science • Machine Learning • NLP • Analytics</p>
@@ -152,7 +153,6 @@
         </a>
     </section>
 
-    <!-- PROJECTS SECTION -->
     <section id="projects">
         <h2>Projects</h2>
 
@@ -160,23 +160,22 @@
 
             <div class="project-card">
                 <h3>Laptop Price Prediction</h3>
-                <p>Multiple Linear Regression ML model predicting laptop prices using specs-based numerical features.</p>
+                <p>Multiple Linear Regression model predicting laptop prices using numerical system specs.</p>
             </div>
 
             <div class="project-card">
                 <h3>Reddit Post Classification</h3>
-                <p>NLP text classifier trained on scraped Reddit credit-card discussions (title, username, comments).</p>
+                <p>NLP classifier trained on scraped Reddit credit-card discussions.</p>
             </div>
 
             <div class="project-card">
                 <h3>More Projects</h3>
-                <p>Check out more ML, statistics, and data analytics work on my GitHub profile.</p>
+                <p>Explore more ML, statistics, and analytics projects on my GitHub.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact">
         <h2>Contact</h2>
 
