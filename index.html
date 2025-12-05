@@ -1,1587 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Pandey | Data Science & Statistics</title>
-
-  <!-- Primary Meta Tags -->
-  <meta name="description" content="Portfolio of Aditya Pandey – M.Sc. Statistics student at IIT Bombay, aspiring Data Scientist and Analyst.">
-  <meta name="author" content="Aditya Pandey">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --bg-alt: #ffffff;
-      --card: #ffffff;
-      --accent: #2563eb;            /* calm blue */
-      --accent-soft: rgba(37, 99, 235, 0.08);
-      --accent-2: #0f766e;          /* teal */
-      --text: #111827;              /* dark gray text */
-      --muted: #6b7280;             /* medium gray */
-      --border: #e5e7eb;
-      --danger: #dc2626;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
-      --radius-xl: 1.2rem;
-      --radius-lg: 0.9rem;
-      --radius-pill: 999px;
-      --nav-height: 70px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #e5edff 0, #f9fafb 45%, #eef2ff 100%);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    section {
-      padding: 5rem 0;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-
-    /* Navbar */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(249, 250, 251, 0.95);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .navbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: var(--nav-height);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-
-    .brand-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 1rem;
-      background: radial-gradient(circle at 20% 20%, #2563eb, transparent 55%),
-                  radial-gradient(circle at 80% 80%, #0f766e, transparent 55%);
-      border: 1px solid #bfdbfe;
-      box-shadow: 0 6px 18px rgba(148, 163, 184, 0.6);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      color: var(--muted);
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.35rem;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      border-radius: 999px;
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      padding: 0.45rem 1.1rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--accent);
-      font-size: 0.78rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: linear-gradient(to right, #2563eb, #1d4ed8);
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
-      color: #ffffff;
-    }
-
-    .nav-cta span {
-      font-size: 0.95rem;
-    }
-
-    .nav-burger {
-      display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-
-    .nav-burger-line {
-      width: 20px;
-      height: 2px;
-      border-radius: 999px;
-      background: #4b5563;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 720px) {
-      .nav-links {
-        display: none;
-      }
-
-      .nav-burger {
-        display: block;
-      }
-    }
-
-    /* Hero */
-
-    .hero {
-      padding-top: 3.5rem;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.4fr 1.1fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding-top: 1rem;
-      }
-    }
-
-    .hero-left {
-      padding-right: 0.7rem;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.28rem 0.7rem 0.28rem 0.35rem;
-      border-radius: var(--radius-pill);
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      font-size: 0.75rem;
-      color: #4b5563;
-      margin-bottom: 1rem;
-    }
-
-    .badge-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .hero-title {
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-title span {
-      background: linear-gradient(120deg, #2563eb, #0f766e);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 32rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .btn {
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      padding: 0.75rem 1.35rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .btn-primary {
-      background: linear-gradient(to right, #2563eb, #1d4ed8);
-      color: #ffffff;
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.35);
-    }
-
-    .btn-ghost {
-      background: #ffffff;
-      border-color: var(--border);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--text);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.35);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .meta-item span {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .hero-right {
-      position: relative;
-    }
-
-    .profile-card {
-      padding: 1.8rem 1.8rem 1.4rem;
-    }
-
-    .profile-inner {
-      display: grid;
-      grid-template-columns: 1.1fr 1.3fr;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .avatar-ring {
-      width: 160px;
-      height: 160px;
-      border-radius: 2rem;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      box-shadow:
-        0 18px 40px rgba(148, 163, 184, 0.4),
-        0 0 0 1px #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .avatar-placeholder {
-      width: 76%;
-      height: 76%;
-      border-radius: 1.5rem;
-      border: 1px dashed #93c5fd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--muted);
-      padding: 0.6rem;
-    }
-
-    .profile-info-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .profile-info-name {
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .profile-info-role {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .profile-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .chip {
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.68rem;
-      border: 1px solid #d1d5db;
-      color: var(--muted);
-      background: #f9fafb;
-    }
-
-    .chip.highlight {
-      border-color: #2563eb;
-      background: #eff6ff;
-      color: #1e40af;
-    }
-
-    .profile-stats {
-      display: flex;
-      gap: 1.1rem;
-      font-size: 0.8rem;
-    }
-
-    .profile-stat span {
-      display: block;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .profile-orbit {
-      position: absolute;
-      inset: -1.2rem;
-      border-radius: var(--radius-xl);
-      border: 1px dashed #e5e7eb;
-      pointer-events: none;
-    }
-
-    .glow-pill {
-      position: absolute;
-      right: -0.4rem;
-      top: 1.2rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      background: #f9fafb;
-      border: 1px solid #93c5fd;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #1e3a8a;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 10px 26px rgba(148, 163, 184, 0.5);
-    }
-
-    .glow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    @media (max-width: 900px) {
-      .hero-right {
-        order: -1;
-      }
-
-      .profile-card {
-        max-width: 420px;
-        margin: 0 auto;
-      }
-
-      .hero-left {
-        padding-right: 0;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .profile-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .avatar-ring {
-        margin: 0 auto;
-      }
-
-      .glow-pill {
-        top: 0.6rem;
-        right: 0.1rem;
-      }
-    }
-
-    /* Section headings */
-
-    .section-heading {
-      margin-bottom: 2.5rem;
-      text-align: left;
-    }
-
-    .section-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .section-title span {
-      background: linear-gradient(120deg, #2563eb, #0f766e);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    /* About */
-
-    #about .card {
-      padding: 2rem 2rem 2.2rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
-      gap: 2.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .about-text {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .about-text p + p {
-      margin-top: 0.9rem;
-    }
-
-    .about-highlight {
-      margin-top: 1.2rem;
-      padding: 0.9rem 1rem;
-      border-radius: var(--radius-lg);
-      background: #f9fafb;
-      border: 1px dashed var(--border);
-      font-size: 0.86rem;
-      display: flex;
-      gap: 0.7rem;
-      align-items: flex-start;
-    }
-
-    .about-highlight-badge {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid #93c5fd;
-      color: #1e40af;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.3rem;
-      display: inline-block;
-    }
-
-    .about-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      margin-top: 1.3rem;
-    }
-
-    .about-meta-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .about-meta-value {
-      font-weight: 500;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.7rem;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 520px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .skill-pill {
-      padding: 0.45rem 0.8rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-      background: #ffffff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .skill-pill span {
-      font-size: 0.82rem;
-    }
-
-    .skill-level {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-
-    /* Projects */
-
-    #projects .card {
-      padding: 2rem 2rem 2.2rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      border-radius: 1.1rem;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      padding: 1.1rem 1.1rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-      border-color: #bfdbfe;
-    }
-
-    .project-title-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-      align-items: flex-start;
-    }
-
-    .project-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin-bottom: 0.1rem;
-    }
-
-    .project-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .project-pill {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 0.16rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid #bfdbfe;
-      color: #1e40af;
-      background: #eff6ff;
-      white-space: nowrap;
-    }
-
-    .project-description {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-top: 0.1rem;
-      font-size: 0.7rem;
-    }
-
-    .project-tag {
-      padding: 0.15rem 0.45rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: #f9fafb;
-    }
-
-    .project-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.3rem;
-      font-size: 0.76rem;
-      color: var(--muted);
-      gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 0.4rem;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .project-link.primary {
-      border-color: #bfdbfe;
-      color: #1e3a8a;
-      background: #eff6ff;
-    }
-
-    .project-link.secondary {
-      border-color: var(--border);
-      color: var(--muted);
-      background: #ffffff;
-    }
-
-    /* Experience */
-
-    #experience .card {
-      padding: 2rem 2rem 2.2rem;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 1.6rem;
-      border-left: 1px dashed var(--border);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-bottom: 1.8rem;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -0.55rem;
-      top: 0.2rem;
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background: #2563eb;
-      border: 2px solid #ffffff;
-      box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
-    }
-
-    .timeline-role {
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0.1rem;
-    }
-
-    .timeline-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .timeline-description {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-list {
-      font-size: 0.8rem;
-      list-style: none;
-      padding-left: 0;
-      color: var(--muted);
-    }
-
-    .timeline-list li {
-      margin-bottom: 0.25rem;
-      position: relative;
-      padding-left: 0.9rem;
-    }
-
-    .timeline-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0.1rem;
-      top: -0.05rem;
-      color: #2563eb;
-      font-size: 0.9rem;
-    }
-
-    /* Contact */
-
-    #contact .card {
-      padding: 2rem 2rem 1.8rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      gap: 2.3rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-text {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 1.4rem;
-    }
-
-    .contact-highlight {
-      padding: 0.7rem 0.9rem;
-      border-radius: var(--radius-lg);
-      border: 1px dashed var(--border);
-      background: #f9fafb;
-      font-size: 0.82rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 0.7rem;
-      font-size: 0.85rem;
-    }
-
-    .contact-item-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.1rem;
-    }
-
-    .contact-item-value {
-      font-weight: 500;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .contact-pill {
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--muted);
-      background: #ffffff;
-    }
-
-    .contact-pill strong {
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 0.8rem;
-      font-size: 0.85rem;
-    }
-
-    .field {
-      display: grid;
-      gap: 0.3rem;
-    }
-
-    .field label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    .field input,
-    .field textarea {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 0.8rem;
-      padding: 0.6rem 0.75rem;
-      font-size: 0.85rem;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-      font-family: inherit;
-      resize: vertical;
-      min-height: 42px;
-    }
-
-    .field textarea {
-      min-height: 90px;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
-    }
-
-    .form-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .form-note {
-      font-size: 0.75rem;
-      color: var(--muted);
-      max-width: 12rem;
-    }
-
-    .form-note span {
-      color: #1d4ed8;
-    }
-
-    .btn-submit {
-      border-radius: var(--radius-pill);
-      padding: 0.7rem 1.3rem;
-      border: 1px solid #2563eb;
-      background: linear-gradient(to right, #2563eb, #1d4ed8);
-      color: #ffffff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      cursor: pointer;
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.4);
-    }
-
-    /* Footer */
-
-    footer {
-      padding: 1.6rem 0 2.3rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Aditya Pandey | Portfolio</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&family=Gloria+Hallelujah&display=swap" rel="stylesheet" />
+
+<style>
+
+/* -----------------------------------------------------------
+   COLOR SYSTEM — Muted beige + olive
+----------------------------------------------------------- */
+
+:root {
+  --bg-1: #fdfaf4;      /* light parchment */
+  --bg-2: #f3ede4;      /* warm muted beige */
+  --bg-3: #e8e1d9;      /* slightly darker beige */
+  --text-main: #403a34; /* soft brown/gray */
+  --text-muted: #6e665e;
+  --accent-olive: #6f8663; 
+  --accent-olive-dark: #4e6045;
+  --white: #ffffff;
+
+  --section-padding: 90px 28px;
+  --max-width: 1080px;
+}
+
+/* -----------------------------------------------------------
+   GLOBAL RESET
+----------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-1);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* -----------------------------------------------------------
+   GLOBAL UTILITY
+----------------------------------------------------------- */
+
+.section {
+  padding: var(--section-padding);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+/* Section headings */
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.1rem;
+  margin-bottom: 24px;
+}
+
+.section-title span {
+  color: var(--accent-olive-dark);
+}
+
+/* Handwritten subtitle */
+.hand {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: var(--accent-olive-dark);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* -----------------------------------------------------------
+   GRID BACKGROUND — subtle graph paper
+----------------------------------------------------------- */
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.12;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  transition: transform 0.25s ease-out;
+}
+
+/* -----------------------------------------------------------
+   NAVIGATION — sticky minimalist
+----------------------------------------------------------- */
+
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: var(--bg-1);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 14px 26px;
+  z-index: 100;
+}
+
+nav .nav-inner {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; left: 0;
+  height: 1px;
+  width: 0%;
+  background: var(--accent-olive-dark);
+  transition: 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* -----------------------------------------------------------
+   HERO SECTION
+----------------------------------------------------------- */
+
+.hero {
+  background: var(--bg-1);
+  padding: var(--section-padding);
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1 1 420px;
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-sub {
+  font-family: "Gloria Hallelujah";
+  color: var(--accent-olive-dark);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 22px;
+}
+
+/* Hero chips */
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #ffffffdd;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Image */
+.hero-img-wrapper {
+  flex: 0 0 260px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #ddd;
+  border: 4px solid var(--accent-olive);
+  object-fit: cover;
+}
+
+/* -----------------------------------------------------------
+   ABOUT SECTION
+----------------------------------------------------------- */
+
+.about {
+  background: var(--bg-2);
+}
+
+.about p {
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* -----------------------------------------------------------
+   PROJECTS — full-width case study strips
+----------------------------------------------------------- */
+
+.project-section {
+  background: var(--bg-1);
+}
+
+.project {
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.project:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  font-family: 'DM Serif Display';
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.project-sub {
+  font-family: 'Gloria Hallelujah';
+  color: var(--accent-olive-dark);
+  margin-bottom: 12px;
+}
+
+.project-desc {
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  max-width: 840px;
+}
+
+/* buttons */
+.project-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid var(--accent-olive-dark);
+  color: var(--accent-olive-dark);
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-olive);
+  color: white;
+}
+
+/* -----------------------------------------------------------
+   EXPERIENCE TIMELINE
+----------------------------------------------------------- */
+
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent-olive);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+}
+
+.timeline-date {
+  font-family: 'Gloria Hallelujah';
+  color: var(--accent-olive-dark);
+  margin-bottom: 6px;
+}
+
+.timeline-role {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.timeline-list li {
+  margin-left: 20px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+/* -----------------------------------------------------------
+   CONTACT — button-only
+----------------------------------------------------------- */
+
+.contact {
+  background: var(--bg-2);
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.contact-btn {
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-olive-dark);
+  color: var(--accent-olive-dark);
+  background: #ffffffee;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.contact-btn:hover {
+  background: var(--accent-olive);
+  color: white;
+}
+
+/* -----------------------------------------------------------
+   FOOTER
+----------------------------------------------------------- */
+
+footer {
+  text-align: center;
+  padding: 22px;
+  background: var(--bg-3);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+</style>
 </head>
+
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="wrapper navbar-inner">
-      <a href="#top" class="brand">
-        <div class="brand-logo"></div>
-        <span>Aditya Pandey</span>
-      </a>
 
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-cta">
-          <span>Get in touch</span> ✉️
-        </a>
-      </nav>
+<!-- GRID BG -->
+<div class="grid-bg" id="gridBG"></div>
 
-      <button class="nav-burger" aria-label="Menu">
-        <div class="nav-burger-line"></div>
-        <div class="nav-burger-line"></div>
-      </button>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner container">
+
+    <div class="hero-left">
+      <h1 class="hero-title">Aditya Pandey</h1>
+      <div class="hero-sub">learning to make sense of uncertain worlds</div>
+
+      <p class="hero-text">
+        I’m pursuing an <strong>M.Sc. in Statistics (ASI)</strong> at IIT Bombay,
+        after completing a <strong>B.Sc. (Hons) in Statistics</strong> from Banaras Hindu University.  
+        I enjoy problems where uncertainty, behaviour, and risk meet — whether that’s who might buy insurance,
+        how a disease progresses, or what people really express in their comments.
+      </p>
+
+      <div class="hero-chips">
+        <div class="chip">Statistics</div>
+        <div class="chip">Machine Learning</div>
+        <div class="chip">Time Series</div>
+        <div class="chip">Python</div>
+        <div class="chip">SQL</div>
+        <div class="chip">Power BI</div>
+      </div>
+
     </div>
-  </header>
 
-  <!-- Hero -->
-  <main id="top">
-    <section class="hero">
-      <div class="wrapper hero-inner">
-        <div class="hero-left">
-          <div class="badge">
-            <span class="badge-dot"></span>
-            <span>M.Sc. Statistics · IIT Bombay · Open to data roles</span>
-          </div>
+    <div class="hero-img-wrapper">
+      <!-- Replace src later -->
+      <img class="hero-img" src="#" alt="Your Photo" />
+    </div>
 
-          <h1 class="hero-title">
-            Hi, I’m <span>Aditya Pandey</span> –<br />
-            Data Scientist in training with a Statistics backbone
-          </h1>
+  </div>
+</section>
 
-          <p class="hero-subtitle">
-            I’m pursuing M.Sc. in Statistics (ASI) at IIT Bombay and completed my B.Sc. (Hons) in
-            Statistics from Banaras Hindu University. I enjoy using statistical thinking, machine
-            learning, and clear communication to solve real-world problems in areas like risk,
-            healthcare, time series, and consumer behaviour.
-          </p>
+<!-- ABOUT -->
+<section class="about section" id="about">
+  <div class="container">
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              View projects →
-            </a>
-            <a href="#contact" class="btn btn-ghost">
-              Download CV
-            </a>
-          </div>
+    <div class="hand">a little background</div>
+    <h2 class="section-title">About <span>Me</span></h2>
 
-          <div class="hero-meta">
-            <div class="meta-item">
-              <span>Statistics @ IITB</span>
-              M.Sc. in Statistics (ASI), Indian Institute of Technology Bombay
-            </div>
-            <div class="meta-item">
-              <span>4+ key projects</span>
-              Insurance, healthcare, time series, and text classification
-            </div>
-          </div>
-        </div>
+    <p>
+      My foundation lies in core statistics — probability, inference, linear models,
+      regression, and time series — but I’m happiest when these tools meet real-world data.
+    </p>
 
-        <div class="hero-right">
-          <div class="card profile-card">
-            <div class="profile-orbit"></div>
-            <div class="glow-pill">
-              <span class="glow-dot"></span>
-              <span>Actively exploring data roles</span>
-            </div>
+    <p>
+      I’ve worked on projects ranging from predicting insurance uptake and modelling 
+      Parkinson’s disease progression to analyzing time series patterns and classifying 
+      comments from online credit card discussions. These problems blend human behaviour with
+      data, something I find fascinating.
+    </p>
 
-            <div class="profile-inner">
-              <div class="avatar-ring">
-                <!-- Replace this with your photo -->
-                <!-- Example: <img src="aditya.jpg" alt="Aditya Pandey" /> -->
-                <div class="avatar-placeholder">
-                  Add your photo here<br />(a clear portrait works best)
-                </div>
-              </div>
+    <p>
+      Alongside academics, I’ve contributed to student life as a 
+      <strong>Student Companion (ISCP)</strong>, mentoring juniors, and as an 
+      <strong>Interview Coordinator (IPT)</strong>, helping organize placement processes.  
+      I also enjoy photography — winning first place in the “Campus Kaleidoscope” competition —
+      as well as table tennis, chess, carrom, and swimming.
+    </p>
 
-              <div>
-                <div class="profile-info-title">Profile</div>
-                <div class="profile-info-name">Aditya Pandey</div>
-                <div class="profile-info-role">
-                  M.Sc. Statistics (ASI), IIT Bombay · Aspiring Data Scientist / Data Analyst
-                </div>
+  </div>
+</section>
 
-                <div class="profile-tags">
-                  <span class="chip highlight">Statistics · ML · Time Series</span>
-                  <span class="chip">Python &amp; SQL</span>
-                  <span class="chip">Excel · PowerPoint · Power BI</span>
-                  <span class="chip">Mentoring &amp; Coordination</span>
-                </div>
+<!-- PROJECTS -->
+<section class="project-section section" id="projects">
+  <div class="container">
 
-                <div class="profile-stats">
-                  <div class="profile-stat">
-                    <span>4+</span>
-                    End-to-end applied projects
-                  </div>
-                  <div class="profile-stat">
-                    <span>2</span>
-                    Institutes: IIT Bombay &amp; BHU (Statistics)
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- profile-card -->
-        </div>
-      </div>
-    </section>
+    <div class="hand">case studies</div>
+    <h2 class="section-title">Projects & <span>Work</span></h2>
 
-    <!-- About -->
-    <section id="about">
-      <div class="wrapper">
-        <div class="card">
-          <div class="section-heading">
-            <div class="section-kicker">About</div>
-            <h2 class="section-title">
-              A brief look at <span>who I am</span>
-            </h2>
-          </div>
+    <!-- Project 1 -->
+    <div class="project">
+      <h3 class="project-title">Insurance Uptake Classification</h3>
+      <div class="project-sub">understanding customer behaviour</div>
+      <p class="project-desc">
+        Built a model to predict which customers are likely to buy insurance.  
+        My work included data cleaning, feature engineering, comparing ML models,
+        evaluating metrics for imbalanced data, and interpreting model insights
+        to support more focused outreach.
+      </p>
 
-          <div class="about-grid">
-            <div>
-              <div class="about-text">
-                <p>
-                  I am currently pursuing <strong>M.Sc. in Statistics (ASI)</strong> at the
-                  <strong>Indian Institute of Technology Bombay</strong>. Before this, I completed my
-                  <strong>B.Sc. (Hons) in Statistics</strong> from
-                  <strong>Banaras Hindu University</strong>. My academic journey has given me a strong
-                  foundation in probability, inference, linear models, and modern statistical methods.
-                </p>
-                <p>
-                  I enjoy working on applied problems where data, domain understanding, and communication
-                  come together. My projects span <strong>insurance uptake classification</strong>,
-                  <strong>Parkinson’s disease progression prediction</strong>,
-                  <strong>time series modelling &amp; forecasting</strong>, and
-                  <strong>classifying comments on credit card discussions</strong>.
-                </p>
-                <p>
-                  Beyond coursework and projects, I value roles where I can support people and enable
-                  smoother processes. As a <strong>Student Companion (ISCP)</strong> I mentor juniors in
-                  academic and non-academic matters, and as an <strong>Interview Coordinator (IPT)</strong>
-                  I’ve helped coordinate placement interviews.
-                </p>
-                <p>
-                  Outside academics, I enjoy playing <strong>table tennis, chess, carrom</strong>,
-                  swimming, and I also have a creative side—I secured
-                  <strong>first position</strong> in the intra-department photography competition
-                  “Campus Kaleidoscope”.
-                </p>
-              </div>
-
-              <div class="about-highlight">
-                <div>
-                  <span class="about-highlight-badge">What I’m looking for</span>
-                  <div>
-                    I’m interested in roles such as <strong>Data Scientist</strong>,
-                    <strong>Data Analyst</strong>, or <strong>Quantitative Analyst</strong>, where I can
-                    use my statistics training to work on real-world data, design experiments,
-                    build models, and communicate insights to technical and non-technical stakeholders.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="about-meta">
-                <div>
-                  <div class="about-meta-label">Current Program</div>
-                  <div class="about-meta-value">
-                    M.Sc. in Statistics (ASI), IIT Bombay
-                  </div>
-                </div>
-                <div>
-                  <div class="about-meta-label">Undergraduate</div>
-                  <div class="about-meta-value">
-                    B.Sc. (Hons) Statistics, Banaras Hindu University
-                  </div>
-                </div>
-                <div>
-                  <div class="about-meta-label">Certification</div>
-                  <div class="about-meta-value">
-                    “Time Series Analysis”, C&amp;A Club, IIT Guwahati
-                  </div>
-                </div>
-                <div>
-                  <div class="about-meta-label">Location</div>
-                  <div class="about-meta-value">
-                    India (open to suitable opportunities)
-                  </div>
-                </div>
-              </div>
-
-              <div style="margin-top: 1.4rem; margin-bottom: 0.7rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted);">
-                Core skills
-              </div>
-              <div class="skills-grid">
-                <div class="skill-pill">
-                  <span>Statistics &amp; Probability</span>
-                  <span class="skill-level">Core</span>
-                </div>
-                <div class="skill-pill">
-                  <span>Time Series Modelling &amp; Forecasting</span>
-                  <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-pill">
-                  <span>Python (Pandas, NumPy, scikit-learn)</span>
-                  <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-pill">
-                  <span>SQL</span>
-                  <span class="skill-level">Intermediate+</span>
-                </div>
-                <div class="skill-pill">
-                  <span>Excel, Word &amp; PowerPoint</span>
-                  <span class="skill-level">Advanced</span>
-                </div>
-                <div class="skill-pill">
-                  <span>Power BI &amp; Data Visualization</span>
-                  <span class="skill-level">Intermediate</span>
-                </div>
-              </div>
-            </div>
-          </div> <!-- about-grid -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="wrapper">
-        <div class="card">
-          <div class="section-heading">
-            <div class="section-kicker">Projects</div>
-            <h2 class="section-title">
-              Selected <span>work &amp; case studies</span>
-            </h2>
-          </div>
-
-          <div class="projects-grid">
-            <!-- Project 1: Insurance Uptake Classification -->
-            <article class="project-card">
-              <div class="project-title-row">
-                <div>
-                  <div class="project-label">Classification · Risk / Insurance</div>
-                  <h3 class="project-title">Insurance Uptake Classification</h3>
-                </div>
-                <div class="project-pill">End-to-end ML</div>
-              </div>
-
-              <p class="project-description">
-                Built a classification model to predict which customers are likely to purchase
-                insurance. Worked on data cleaning, feature engineering, model comparison, and
-                evaluation to support targeted marketing and improved conversion.
-              </p>
-
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Logistic Regression</span>
-                <span class="project-tag">Random Forest</span>
-                <span class="project-tag">Model Evaluation</span>
-              </div>
-
-              <div class="project-footer">
-                <span>Helps identify high-potential customers for focused outreach.</span>
-                <div class="project-links">
-                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
-                  <a href="#" target="_blank" class="project-link secondary">Notebook</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 2: Parkinson’s Disease Progression -->
-            <article class="project-card">
-              <div class="project-title-row">
-                <div>
-                  <div class="project-label">Healthcare · Regression</div>
-                  <h3 class="project-title">Parkinson’s Disease Progression Prediction</h3>
-                </div>
-                <div class="project-pill">ML for Health</div>
-              </div>
-
-              <p class="project-description">
-                Modelled the progression of Parkinson’s disease using patient features to predict
-                relevant clinical outcomes. Compared multiple regression models and assessed
-                performance using appropriate error metrics.
-              </p>
-
-              <div class="project-tags">
-                <span class="project-tag">Regression</span>
-                <span class="project-tag">Feature Engineering</span>
-                <span class="project-tag">Healthcare Data</span>
-                <span class="project-tag">Error Metrics</span>
-              </div>
-
-              <div class="project-footer">
-                <span>Supports data-driven understanding of disease progression.</span>
-                <div class="project-links">
-                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
-                  <a href="#" target="_blank" class="project-link secondary">Report</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 3: Time Series Modelling & Forecasting -->
-            <article class="project-card">
-              <div class="project-title-row">
-                <div>
-                  <div class="project-label">Time Series</div>
-                  <h3 class="project-title">Time Series Modelling &amp; Forecasting</h3>
-                </div>
-                <div class="project-pill">Forecasting</div>
-              </div>
-
-              <p class="project-description">
-                Worked on time series data to model underlying patterns and generate forecasts.
-                Explored stationarity, seasonality, model diagnostics, and forecast accuracy using
-                appropriate metrics and tests.
-              </p>
-
-              <div class="project-tags">
-                <span class="project-tag">Time Series</span>
-                <span class="project-tag">ARIMA / SARIMA</span>
-                <span class="project-tag">Diagnostics</span>
-                <span class="project-tag">Forecast Accuracy</span>
-              </div>
-
-              <div class="project-footer">
-                <span>Improves planning through structured forecasting.</span>
-                <div class="project-links">
-                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
-                  <a href="#" target="_blank" class="project-link secondary">Summary</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 4: Classifying Post Comments -->
-            <article class="project-card">
-              <div class="project-title-row">
-                <div>
-                  <div class="project-label">NLP · Text Classification</div>
-                  <h3 class="project-title">Classifying Comments on Credit Card Discussions</h3>
-                </div>
-                <div class="project-pill">Text Analytics</div>
-              </div>
-
-              <p class="project-description">
-                Classified user comments on credit card discussions to understand themes and sentiment.
-                Used text preprocessing and machine learning to group comments into meaningful
-                categories for better customer insight.
-              </p>
-
-              <div class="project-tags">
-                <span class="project-tag">Text Classification</span>
-                <span class="project-tag">NLP</span>
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Customer Insight</span>
-              </div>
-
-              <div class="project-footer">
-                <span>Helps summarise large volumes of customer feedback.</span>
-                <div class="project-links">
-                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
-                  <a href="#" target="_blank" class="project-link secondary">Presentation</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience">
-      <div class="wrapper">
-        <div class="card">
-          <div class="section-heading">
-            <div class="section-kicker">Experience</div>
-            <h2 class="section-title">
-              Where I’ve <span>applied my skills</span>
-            </h2>
-          </div>
-
-          <div class="timeline">
-            <!-- Experience item 1: Summer Research Intern -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-role">Summer Research Intern</div>
-              <div class="timeline-meta">
-                <span>Under Prof. Hemant Kulkarni</span>
-                <span>MIT WPU, Pune</span>
-              </div>
-              <p class="timeline-description">
-                Contributed to research work under the guidance of Prof. Hemant Kulkarni at MIT World
-                Peace University, Pune, applying statistical and analytical tools to real-world data.
-              </p>
-              <ul class="timeline-list">
-                <li>Explored datasets with a focus on rigorous statistical analysis.</li>
-                <li>Used programming and statistical methods to derive meaningful patterns.</li>
-                <li>Strengthened my understanding of research workflow and documentation.</li>
-              </ul>
-            </div>
-
-            <!-- Experience item 2: Academic & Personal Projects -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-role">Academic &amp; Personal Projects in Statistics &amp; ML</div>
-              <div class="timeline-meta">
-                <span>IIT Bombay &amp; BHU</span>
-                <span>Ongoing</span>
-              </div>
-              <p class="timeline-description">
-                Hands-on work across multiple domains including insurance, healthcare, time series, and
-                text data, applying statistical thinking and machine learning to practical problems.
-              </p>
-              <ul class="timeline-list">
-                <li>
-                  Designed end-to-end workflows: data cleaning, EDA, model building, evaluation, and
-                  communication of results.
-                </li>
-                <li>
-                  Worked with classification, regression, and time series models using Python and
-                  statistical tools.
-                </li>
-                <li>
-                  Documented approaches and results clearly for both technical and non-technical audiences.
-                </li>
-              </ul>
-            </div>
-
-            <!-- Experience item 3: Positions of Responsibility & Activities -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-role">Positions of Responsibility &amp; Activities</div>
-              <div class="timeline-meta">
-                <span>Student Companion (ISCP) · Interview Coordinator (IPT)</span>
-              </div>
-              <p class="timeline-description">
-                In addition to academics, I actively contribute to the student community and activities.
-              </p>
-              <ul class="timeline-list">
-                <li>
-                  <strong>Student Companion, ISCP:</strong> Mentor juniors in academic and non-academic
-                  matters, helping them adjust and succeed.
-                </li>
-                <li>
-                  <strong>Interview Coordinator, IPT:</strong> Assisted with coordination of placement
-                  interviews, ensuring smooth communication and scheduling.
-                </li>
-                <li>
-                  <strong>Photography:</strong> Secured first position in the intra-department photography
-                  competition “Campus Kaleidoscope”.
-                </li>
-                <li>
-                  Actively participate in sports and hobbies like table tennis, chess, carrom, and swimming.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="wrapper">
-        <div class="card">
-          <div class="section-heading">
-            <div class="section-kicker">Contact</div>
-            <h2 class="section-title">
-              Let’s talk about <span>data &amp; opportunities</span>
-            </h2>
-          </div>
-
-          <div class="contact-grid">
-            <div>
-              <p class="contact-text">
-                I’m open to discussing internships, full-time roles, collaborative projects, and
-                anything related to statistics, data science, and analytics. If you think my
-                background fits a role or you’d like to know more about my work, feel free to reach out.
-              </p>
-
-              <div class="contact-highlight">
-                Email is usually the best way to contact me. I also use LinkedIn and GitHub to share
-                projects and stay connected with the data community.
-              </div>
-
-              <div class="contact-list">
-                <div>
-                  <div class="contact-item-label">Email</div>
-                  <div class="contact-item-value">
-                    <!-- TODO: replace with your real email -->
-                    aditya.pandey@example.com
-                  </div>
-                </div>
-                <div>
-                  <div class="contact-item-label">LinkedIn</div>
-                  <div class="contact-item-value">
-                    <!-- TODO: replace with your LinkedIn profile -->
-                    <a href="#" target="_blank">linkedin.com/in/aditya-pandey</a>
-                  </div>
-                </div>
-                <div>
-                  <div class="contact-item-label">GitHub</div>
-                  <div class="contact-item-value">
-                    <!-- TODO: replace with your GitHub -->
-                    <a href="#" target="_blank">github.com/aditya-pandey</a>
-                  </div>
-                </div>
-                <div>
-                  <div class="contact-item-label">Location</div>
-                  <div class="contact-item-value">
-                    India · Open to suitable opportunities
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-links">
-                <a href="#" class="contact-pill">
-                  <strong>Résumé</strong> · PDF
-                </a>
-                <a href="#projects" class="contact-pill">
-                  <strong>Projects</strong> · View details
-                </a>
-              </div>
-            </div>
-
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a static demo form. Connect it to a backend or service like Formspree to receive messages.');">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name" required />
-              </div>
-              <div class="field">
-                <label for="email-input">Email</label>
-                <input id="email-input" type="email" placeholder="your@email.com" required />
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Tell me about the opportunity, project, or question..." required></textarea>
-              </div>
-              <div class="form-footer">
-                <div class="form-note">
-                  <span>Note:</span> This form is a demo.
-                  Connect it to a service (e.g., Formspree) to receive messages.
-                </div>
-                <button type="submit" class="btn-submit">
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </div> <!-- contact-grid -->
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrapper footer-inner">
-      <div>© <span id="year"></span> Aditya Pandey. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <div class="project-buttons">
+        <a class="btn" href="#your-link-here">Summary</a>
+        <a class="btn" href="#your-link-here">Code</a>
       </div>
     </div>
-  </footer>
 
-  <script>
-    // Auto-update footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <!-- Project 2 -->
+    <div class="project">
+      <h3 class="project-title">Parkinson’s Disease Progression Prediction</h3>
+      <div class="project-sub">healthcare modelling</div>
+      <p class="project-desc">
+        Modelled the progression of Parkinson’s disease using patient-level features.
+        Compared regression approaches and evaluated predictions through clinically relevant
+        error metrics. The work highlights the challenges and opportunities in modelling
+        longitudinal health data.
+      </p>
+
+      <div class="project-buttons">
+        <a class="btn" href="#your-link-here">Summary</a>
+        <a class="btn" href="#your-link-here">Code</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+      <h3 class="project-title">Time Series Modelling & Forecasting</h3>
+      <div class="project-sub">patterns over time</div>
+      <p class="project-desc">
+        Analysed time series to uncover structure, trends, and seasonality,
+        then built and validated forecasting models using classical ARIMA/SARIMA frameworks.
+        Diagnostics and error measures were used to ensure robustness.
+      </p>
+
+      <div class="project-buttons">
+        <a class="btn" href="#your-link-here">Summary</a>
+        <a class="btn" href="#your-link-here">Code</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project">
+      <h3 class="project-title">Classifying Credit Card Discussion Comments</h3>
+      <div class="project-sub">nlp & text classification</div>
+      <p class="project-desc">
+        Classified user comments from online credit card discussions into meaningful categories.
+        This helped summarize customer concerns and identify dominant themes useful for improving
+        service offerings.
+      </p>
+
+      <div class="project-buttons">
+        <a class="btn" href="#your-link-here">Summary</a>
+        <a class="btn" href="#your-link-here">Code</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience section" id="experience" style="background: var(--bg-2);">
+  <div class="container">
+
+    <div class="hand">milestones</div>
+    <h2 class="section-title">Experience & <span>Roles</span></h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Summer 2024</div>
+        <div class="timeline-role">Summer Research Intern</div>
+        <div class="timeline-meta">MIT WPU · Under Prof. Hemant Kulkarni</div>
+        <ul class="timeline-list">
+          <li>Conducted research-oriented statistical analysis.</li>
+          <li>Worked with real datasets and applied modelling techniques.</li>
+          <li>Learned full cycle from research question to interpretation.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2023–2025</div>
+        <div class="timeline-role">Student Companion (ISCP)</div>
+        <div class="timeline-meta">IIT Bombay</div>
+        <ul class="timeline-list">
+          <li>Mentored juniors in academic and non-academic matters.</li>
+          <li>Provided support in transitioning to institute life.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2023–2024</div>
+        <div class="timeline-role">Interview Coordinator (IPT)</div>
+        <div class="timeline-meta">IIT Bombay</div>
+        <ul class="timeline-list">
+          <li>Assisted in organizing placement interview processes.</li>
+          <li>Liaised between students, coordinators, and recruiters.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2023</div>
+        <div class="timeline-role">Photography — First Place</div>
+        <div class="timeline-meta">“Campus Kaleidoscope” Competition</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section" id="contact">
+  <div class="container">
+
+    <div class="hand">let's talk</div>
+    <h2 class="section-title">Get in <span>Touch</span></h2>
+
+    <p>For opportunities, collaborations, or conversations — here’s where you can reach me:</p>
+
+    <div class="contact-buttons">
+      <a class="contact-btn" href="#your-email-here">Email</a>
+      <a class="contact-btn" href="#your-linkedin-here">LinkedIn</a>
+      <a class="contact-btn" href="#your-github-here">GitHub</a>
+      <a class="contact-btn" href="#your-resume-link-here">Résumé</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © <span id="year"></span> Aditya Pandey — Crafted with curiosity & statistics.
+</footer>
+
+<script>
+// Auto year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Parallax grid
+const grid = document.getElementById("gridBG");
+document.addEventListener("mousemove", e => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  grid.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
+
 </body>
 </html>
