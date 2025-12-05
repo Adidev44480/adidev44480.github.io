@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Pandey | Portfolio</title>
+  <title>Aditya Pandey | Data Science & Statistics</title>
 
   <!-- Primary Meta Tags -->
-  <meta name="description" content="Personal portfolio of Aditya Pandey - Data Analyst | Developer | Problem Solver">
+  <meta name="description" content="Portfolio of Aditya Pandey – M.Sc. Statistics student at IIT Bombay, aspiring Data Scientist and Analyst.">
   <meta name="author" content="Aditya Pandey">
 
   <!-- Google Fonts -->
@@ -14,19 +14,19 @@
 
   <style>
     :root {
-      --bg: #050816;
-      --bg-alt: #0b1120;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --accent-2: #a855f7;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --danger: #ef4444;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
-      --radius-xl: 1.5rem;
-      --radius-lg: 1rem;
+      --bg: #f5f7fb;
+      --bg-alt: #ffffff;
+      --card: #ffffff;
+      --accent: #2563eb;            /* calm blue */
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --accent-2: #0f766e;          /* teal */
+      --text: #111827;              /* dark gray text */
+      --muted: #6b7280;             /* medium gray */
+      --border: #e5e7eb;
+      --danger: #dc2626;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius-xl: 1.2rem;
+      --radius-lg: 0.9rem;
       --radius-pill: 999px;
       --nav-height: 70px;
     }
@@ -43,7 +43,7 @@
 
     body {
       font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+      background: radial-gradient(circle at top, #e5edff 0, #f9fafb 45%, #eef2ff 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -59,8 +59,6 @@
       display: block;
     }
 
-    /* Layout */
-
     .wrapper {
       max-width: 1100px;
       margin: 0 auto;
@@ -71,17 +69,11 @@
       padding: 5rem 0;
     }
 
-    /* Glassy Card */
-
     .card {
-      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 50%),
-                  radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.15), transparent 50%),
-                  rgba(15, 23, 42, 0.95);
+      background: var(--card);
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
     }
 
     /* Navbar */
@@ -90,10 +82,10 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9), transparent);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(249, 250, 251, 0.95);
+      border-bottom: 1px solid var(--border);
     }
 
     .navbar-inner {
@@ -115,10 +107,10 @@
       width: 34px;
       height: 34px;
       border-radius: 1rem;
-      background: radial-gradient(circle at 20% 20%, #38bdf8, transparent 55%),
-                  radial-gradient(circle at 80% 80%, #a855f7, transparent 55%);
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at 20% 20%, #2563eb, transparent 55%),
+                  radial-gradient(circle at 80% 80%, #0f766e, transparent 55%);
+      border: 1px solid #bfdbfe;
+      box-shadow: 0 6px 18px rgba(148, 163, 184, 0.6);
     }
 
     .nav-links {
@@ -160,7 +152,7 @@
     .nav-cta {
       padding: 0.45rem 1.1rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid var(--accent);
       font-size: 0.78rem;
       font-weight: 500;
       text-transform: uppercase;
@@ -168,8 +160,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.95));
-      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.8);
+      background: linear-gradient(to right, #2563eb, #1d4ed8);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+      color: #ffffff;
     }
 
     .nav-cta span {
@@ -187,7 +180,7 @@
       width: 20px;
       height: 2px;
       border-radius: 999px;
-      background: #e5e7eb;
+      background: #4b5563;
       margin: 4px 0;
     }
 
@@ -231,10 +224,10 @@
       gap: 0.5rem;
       padding: 0.28rem 0.7rem 0.28rem 0.35rem;
       border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
       font-size: 0.75rem;
-      color: var(--muted);
+      color: #4b5563;
       margin-bottom: 1rem;
     }
 
@@ -242,8 +235,7 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      background: radial-gradient(circle at center, #4ade80, #16a34a);
-      box-shadow: 0 0 12px rgba(74, 222, 128, 0.8);
+      background: #22c55e;
     }
 
     .hero-title {
@@ -254,7 +246,7 @@
     }
 
     .hero-title span {
-      background: linear-gradient(120deg, #38bdf8, #a855f7);
+      background: linear-gradient(120deg, #2563eb, #0f766e);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -289,19 +281,19 @@
     }
 
     .btn-primary {
-      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
-      box-shadow: 0 15px 35px rgba(8, 47, 73, 0.9);
-      color: #0b1120;
+      background: linear-gradient(to right, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(8, 47, 73, 1);
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.35);
     }
 
     .btn-ghost {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: rgba(148, 163, 184, 0.8);
+      background: #ffffff;
+      border-color: var(--border);
       color: var(--muted);
     }
 
@@ -309,7 +301,7 @@
       border-color: var(--accent);
       color: var(--text);
       transform: translateY(-1px);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.95);
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.35);
     }
 
     .hero-meta {
@@ -346,14 +338,11 @@
       width: 160px;
       height: 160px;
       border-radius: 2rem;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.5), transparent 60%),
-        radial-gradient(circle at 90% 100%, rgba(168, 85, 247, 0.6), transparent 65%),
-        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1) 60%);
-      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
       box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 1);
+        0 18px 40px rgba(148, 163, 184, 0.4),
+        0 0 0 1px #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -364,7 +353,7 @@
       width: 76%;
       height: 76%;
       border-radius: 1.5rem;
-      border: 1px dashed rgba(148, 163, 184, 0.7);
+      border: 1px dashed #93c5fd;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -405,15 +394,15 @@
       padding: 0.25rem 0.55rem;
       border-radius: 999px;
       font-size: 0.68rem;
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid #d1d5db;
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
+      background: #f9fafb;
     }
 
     .chip.highlight {
-      border-color: rgba(56, 189, 248, 0.9);
-      background: rgba(8, 47, 73, 0.9);
-      color: #e0f2fe;
+      border-color: #2563eb;
+      background: #eff6ff;
+      color: #1e40af;
     }
 
     .profile-stats {
@@ -433,7 +422,7 @@
       position: absolute;
       inset: -1.2rem;
       border-radius: var(--radius-xl);
-      border: 1px dashed rgba(148, 163, 184, 0.3);
+      border: 1px dashed #e5e7eb;
       pointer-events: none;
     }
 
@@ -443,24 +432,23 @@
       top: 1.2rem;
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(56, 189, 248, 0.9);
+      background: #f9fafb;
+      border: 1px solid #93c5fd;
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #e0f2fe;
+      color: #1e3a8a;
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 12px 30px rgba(8, 47, 73, 0.85);
+      box-shadow: 0 10px 26px rgba(148, 163, 184, 0.5);
     }
 
     .glow-dot {
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: radial-gradient(circle at center, #22c55e, #16a34a);
-      box-shadow: 0 0 10px rgba(34, 197, 94, 1);
+      background: #22c55e;
     }
 
     @media (max-width: 900px) {
@@ -493,7 +481,7 @@
       }
     }
 
-    /* Section Headings */
+    /* Section headings */
 
     .section-heading {
       margin-bottom: 2.5rem;
@@ -515,12 +503,12 @@
     }
 
     .section-title span {
-      background: linear-gradient(120deg, #38bdf8, #a855f7);
+      background: linear-gradient(120deg, #2563eb, #0f766e);
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    /* About Section */
+    /* About */
 
     #about .card {
       padding: 2rem 2rem 2.2rem;
@@ -551,8 +539,8 @@
       margin-top: 1.2rem;
       padding: 0.9rem 1rem;
       border-radius: var(--radius-lg);
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px dashed rgba(148, 163, 184, 0.5);
+      background: #f9fafb;
+      border: 1px dashed var(--border);
       font-size: 0.86rem;
       display: flex;
       gap: 0.7rem;
@@ -563,9 +551,9 @@
       font-size: 0.75rem;
       padding: 0.2rem 0.5rem;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.8);
-      color: #e0f2fe;
+      background: var(--accent-soft);
+      border: 1px solid #93c5fd;
+      color: #1e40af;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       margin-bottom: 0.3rem;
@@ -608,8 +596,8 @@
     .skill-pill {
       padding: 0.45rem 0.8rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--border);
+      background: #ffffff;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -627,7 +615,7 @@
       color: var(--muted);
     }
 
-    /* Projects Section */
+    /* Projects */
 
     #projects .card {
       padding: 2rem 2rem 2.2rem;
@@ -635,27 +623,14 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
-    }
-
-    @media (max-width: 960px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 720px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     .project-card {
       border-radius: 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 55%),
-                  rgba(15, 23, 42, 0.96);
+      border: 1px solid var(--border);
+      background: #ffffff;
       padding: 1.1rem 1.1rem 1rem;
       display: flex;
       flex-direction: column;
@@ -666,24 +641,10 @@
       overflow: hidden;
     }
 
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), transparent 40%, transparent 60%, rgba(168, 85, 247, 0.1));
-      opacity: 0;
-      transition: opacity 0.18s ease;
-      pointer-events: none;
-    }
-
     .project-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
-      border-color: rgba(56, 189, 248, 0.7);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      border-color: #bfdbfe;
     }
 
     .project-title-row {
@@ -712,9 +673,9 @@
       letter-spacing: 0.16em;
       padding: 0.16rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.9);
-      color: #e0f2fe;
-      background: rgba(8, 47, 73, 0.85);
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      background: #eff6ff;
       white-space: nowrap;
     }
 
@@ -734,8 +695,9 @@
     .project-tag {
       padding: 0.15rem 0.45rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid var(--border);
       color: var(--muted);
+      background: #f9fafb;
     }
 
     .project-footer {
@@ -745,6 +707,8 @@
       margin-top: 0.3rem;
       font-size: 0.76rem;
       color: var(--muted);
+      gap: 0.4rem;
+      flex-wrap: wrap;
     }
 
     .project-links {
@@ -765,18 +729,18 @@
     }
 
     .project-link.primary {
-      border-color: rgba(56, 189, 248, 0.8);
-      color: #e0f2fe;
-      background: rgba(8, 47, 73, 0.85);
+      border-color: #bfdbfe;
+      color: #1e3a8a;
+      background: #eff6ff;
     }
 
     .project-link.secondary {
-      border-color: rgba(148, 163, 184, 0.7);
+      border-color: var(--border);
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.96);
+      background: #ffffff;
     }
 
-    /* Experience Section */
+    /* Experience */
 
     #experience .card {
       padding: 2rem 2rem 2.2rem;
@@ -785,7 +749,7 @@
     .timeline {
       position: relative;
       padding-left: 1.6rem;
-      border-left: 1px dashed rgba(148, 163, 184, 0.6);
+      border-left: 1px dashed var(--border);
     }
 
     .timeline-item {
@@ -800,9 +764,9 @@
       width: 12px;
       height: 12px;
       border-radius: 999px;
-      background: radial-gradient(circle at center, #38bdf8, #0ea5e9);
-      border: 2px solid #020617;
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.9);
+      background: #2563eb;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
     }
 
     .timeline-role {
@@ -844,11 +808,11 @@
       position: absolute;
       left: 0.1rem;
       top: -0.05rem;
-      color: #38bdf8;
+      color: #2563eb;
       font-size: 0.9rem;
     }
 
-    /* Contact Section */
+    /* Contact */
 
     #contact .card {
       padding: 2rem 2rem 1.8rem;
@@ -876,8 +840,8 @@
     .contact-highlight {
       padding: 0.7rem 0.9rem;
       border-radius: var(--radius-lg);
-      border: 1px dashed rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.96);
+      border: 1px dashed var(--border);
+      background: #f9fafb;
       font-size: 0.82rem;
       margin-bottom: 1.2rem;
     }
@@ -910,13 +874,13 @@
     .contact-pill {
       padding: 0.3rem 0.8rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid var(--border);
       font-size: 0.8rem;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.96);
+      background: #ffffff;
     }
 
     .contact-pill strong {
@@ -944,8 +908,8 @@
 
     .field input,
     .field textarea {
-      background: rgba(15, 23, 42, 0.97);
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #ffffff;
+      border: 1px solid var(--border);
       border-radius: 0.8rem;
       padding: 0.6rem 0.75rem;
       font-size: 0.85rem;
@@ -964,7 +928,7 @@
     .field input:focus,
     .field textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
     }
 
     .form-footer {
@@ -973,6 +937,7 @@
       align-items: center;
       gap: 1rem;
       margin-top: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .form-note {
@@ -982,32 +947,27 @@
     }
 
     .form-note span {
-      color: #e0f2fe;
+      color: #1d4ed8;
     }
 
     .btn-submit {
       border-radius: var(--radius-pill);
       padding: 0.7rem 1.3rem;
-      border: 1px solid rgba(56, 189, 248, 0.9);
-      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
-      color: #020617;
+      border: 1px solid #2563eb;
+      background: linear-gradient(to right, #2563eb, #1d4ed8);
+      color: #ffffff;
       font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       cursor: pointer;
-      box-shadow: 0 15px 35px rgba(8, 47, 73, 0.9);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn-submit:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(8, 47, 73, 1);
-    }
-
-    .btn-submit:active {
-      transform: translateY(0);
-      box-shadow: 0 8px 20px rgba(8, 47, 73, 0.9);
+      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.4);
     }
 
     /* Footer */
@@ -1059,11 +1019,10 @@
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="nav-cta">
-          <span>Let’s Talk</span> ✉️
+          <span>Get in touch</span> ✉️
         </a>
       </nav>
 
-      <!-- Mobile burger (not functional JS yet; optional to extend) -->
       <button class="nav-burger" aria-label="Menu">
         <div class="nav-burger-line"></div>
         <div class="nav-burger-line"></div>
@@ -1078,23 +1037,24 @@
         <div class="hero-left">
           <div class="badge">
             <span class="badge-dot"></span>
-            <span>Open to full-time & freelance roles</span>
+            <span>M.Sc. Statistics · IIT Bombay · Open to data roles</span>
           </div>
 
           <h1 class="hero-title">
             Hi, I’m <span>Aditya Pandey</span> –<br />
-            Data & Analytics Enthusiast
+            Data Scientist in training with a Statistics backbone
           </h1>
 
           <p class="hero-subtitle">
-            I turn messy, real-world data into clean insights and simple stories.
-            From exploratory analysis to dashboards and machine learning models,
-            I love solving practical problems with data.
+            I’m pursuing M.Sc. in Statistics (ASI) at IIT Bombay and completed my B.Sc. (Hons) in
+            Statistics from Banaras Hindu University. I enjoy using statistical thinking, machine
+            learning, and clear communication to solve real-world problems in areas like risk,
+            healthcare, time series, and consumer behaviour.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">
-              View Projects →
+              View projects →
             </a>
             <a href="#contact" class="btn btn-ghost">
               Download CV
@@ -1103,12 +1063,12 @@
 
           <div class="hero-meta">
             <div class="meta-item">
-              <span>2+ years</span>
-              Experience with data & analytics (academic + projects)
+              <span>Statistics @ IITB</span>
+              M.Sc. in Statistics (ASI), Indian Institute of Technology Bombay
             </div>
             <div class="meta-item">
-              <span>10+ projects</span>
-              Analytics, ML, dashboards & case studies
+              <span>4+ key projects</span>
+              Insurance, healthcare, time series, and text classification
             </div>
           </div>
         </div>
@@ -1118,38 +1078,40 @@
             <div class="profile-orbit"></div>
             <div class="glow-pill">
               <span class="glow-dot"></span>
-              <span>Actively interviewing</span>
+              <span>Actively exploring data roles</span>
             </div>
 
             <div class="profile-inner">
               <div class="avatar-ring">
                 <!-- Replace this with your photo -->
-                <!-- Example: <img src="me.jpg" alt="Aditya Pandey" /> -->
+                <!-- Example: <img src="aditya.jpg" alt="Aditya Pandey" /> -->
                 <div class="avatar-placeholder">
-                  Add your photo here (square image works best)
+                  Add your photo here<br />(a clear portrait works best)
                 </div>
               </div>
 
               <div>
                 <div class="profile-info-title">Profile</div>
                 <div class="profile-info-name">Aditya Pandey</div>
-                <div class="profile-info-role">Aspiring Data Analyst / Data Scientist</div>
+                <div class="profile-info-role">
+                  M.Sc. Statistics (ASI), IIT Bombay · Aspiring Data Scientist / Data Analyst
+                </div>
 
                 <div class="profile-tags">
-                  <span class="chip highlight">Python · SQL · Power BI</span>
-                  <span class="chip">Machine Learning</span>
-                  <span class="chip">Time Series</span>
-                  <span class="chip">GenAI & NLP</span>
+                  <span class="chip highlight">Statistics · ML · Time Series</span>
+                  <span class="chip">Python &amp; SQL</span>
+                  <span class="chip">Excel · PowerPoint · Power BI</span>
+                  <span class="chip">Mentoring &amp; Coordination</span>
                 </div>
 
                 <div class="profile-stats">
                   <div class="profile-stat">
-                    <span>+X</span>
-                    Case studies solved
+                    <span>4+</span>
+                    End-to-end applied projects
                   </div>
                   <div class="profile-stat">
-                    <span>Y%</span>
-                    Avg. improvement in project metrics
+                    <span>2</span>
+                    Institutes: IIT Bombay &amp; BHU (Statistics)
                   </div>
                 </div>
               </div>
@@ -1166,7 +1128,7 @@
           <div class="section-heading">
             <div class="section-kicker">About</div>
             <h2 class="section-title">
-              A quick snapshot of <span>who I am</span>
+              A brief look at <span>who I am</span>
             </h2>
           </div>
 
@@ -1174,14 +1136,30 @@
             <div>
               <div class="about-text">
                 <p>
-                  I’m a [Your current status – e.g., final-year student / graduate] with a strong interest
-                  in data science, analytics, and problem-solving. I enjoy exploring real-world datasets,
-                  building models, and visualizing insights that actually help people make better decisions.
+                  I am currently pursuing <strong>M.Sc. in Statistics (ASI)</strong> at the
+                  <strong>Indian Institute of Technology Bombay</strong>. Before this, I completed my
+                  <strong>B.Sc. (Hons) in Statistics</strong> from
+                  <strong>Banaras Hindu University</strong>. My academic journey has given me a strong
+                  foundation in probability, inference, linear models, and modern statistical methods.
                 </p>
                 <p>
-                  My recent work includes projects on energy consumption forecasting, insurance uptake
-                  classification, customer segmentation, and text-based analytics using modern NLP
-                  techniques.
+                  I enjoy working on applied problems where data, domain understanding, and communication
+                  come together. My projects span <strong>insurance uptake classification</strong>,
+                  <strong>Parkinson’s disease progression prediction</strong>,
+                  <strong>time series modelling &amp; forecasting</strong>, and
+                  <strong>classifying comments on credit card discussions</strong>.
+                </p>
+                <p>
+                  Beyond coursework and projects, I value roles where I can support people and enable
+                  smoother processes. As a <strong>Student Companion (ISCP)</strong> I mentor juniors in
+                  academic and non-academic matters, and as an <strong>Interview Coordinator (IPT)</strong>
+                  I’ve helped coordinate placement interviews.
+                </p>
+                <p>
+                  Outside academics, I enjoy playing <strong>table tennis, chess, carrom</strong>,
+                  swimming, and I also have a creative side—I secured
+                  <strong>first position</strong> in the intra-department photography competition
+                  “Campus Kaleidoscope”.
                 </p>
               </div>
 
@@ -1189,8 +1167,10 @@
                 <div>
                   <span class="about-highlight-badge">What I’m looking for</span>
                   <div>
-                    Internships or full-time roles in Data Analyst / Business Analyst / Data Scientist
-                    positions where I can work on real-world data, collaborate with smart people, and keep learning.
+                    I’m interested in roles such as <strong>Data Scientist</strong>,
+                    <strong>Data Analyst</strong>, or <strong>Quantitative Analyst</strong>, where I can
+                    use my statistics training to work on real-world data, design experiments,
+                    build models, and communicate insights to technical and non-technical stakeholders.
                   </div>
                 </div>
               </div>
@@ -1199,20 +1179,28 @@
             <div>
               <div class="about-meta">
                 <div>
-                  <div class="about-meta-label">Current Location</div>
-                  <div class="about-meta-value">City, Country</div>
+                  <div class="about-meta-label">Current Program</div>
+                  <div class="about-meta-value">
+                    M.Sc. in Statistics (ASI), IIT Bombay
+                  </div>
                 </div>
                 <div>
-                  <div class="about-meta-label">Email</div>
-                  <div class="about-meta-value">your.email@example.com</div>
+                  <div class="about-meta-label">Undergraduate</div>
+                  <div class="about-meta-value">
+                    B.Sc. (Hons) Statistics, Banaras Hindu University
+                  </div>
                 </div>
                 <div>
-                  <div class="about-meta-label">Education</div>
-                  <div class="about-meta-value">B.Tech / B.Sc / M.Sc in XYZ</div>
+                  <div class="about-meta-label">Certification</div>
+                  <div class="about-meta-value">
+                    “Time Series Analysis”, C&amp;A Club, IIT Guwahati
+                  </div>
                 </div>
                 <div>
-                  <div class="about-meta-label">Preferred Roles</div>
-                  <div class="about-meta-value">Data / Analytics / ML</div>
+                  <div class="about-meta-label">Location</div>
+                  <div class="about-meta-value">
+                    India (open to suitable opportunities)
+                  </div>
                 </div>
               </div>
 
@@ -1221,27 +1209,27 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-pill">
-                  <span>Python (Pandas, NumPy, Scikit-Learn)</span>
+                  <span>Statistics &amp; Probability</span>
+                  <span class="skill-level">Core</span>
+                </div>
+                <div class="skill-pill">
+                  <span>Time Series Modelling &amp; Forecasting</span>
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-pill">
-                  <span>SQL (Joins, Window Functions)</span>
+                  <span>Python (Pandas, NumPy, scikit-learn)</span>
                   <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-pill">
-                  <span>Power BI / Excel Dashboards</span>
-                  <span class="skill-level">Intermediate</span>
+                  <span>SQL</span>
+                  <span class="skill-level">Intermediate+</span>
                 </div>
                 <div class="skill-pill">
-                  <span>Statistics & Hypothesis Testing</span>
-                  <span class="skill-level">Intermediate</span>
+                  <span>Excel, Word &amp; PowerPoint</span>
+                  <span class="skill-level">Advanced</span>
                 </div>
                 <div class="skill-pill">
-                  <span>Machine Learning (Classification, Regression)</span>
-                  <span class="skill-level">Intermediate</span>
-                </div>
-                <div class="skill-pill">
-                  <span>GenAI, Embeddings & NLP</span>
+                  <span>Power BI &amp; Data Visualization</span>
                   <span class="skill-level">Intermediate</span>
                 </div>
               </div>
@@ -1258,66 +1246,36 @@
           <div class="section-heading">
             <div class="section-kicker">Projects</div>
             <h2 class="section-title">
-              Selected <span>work & case studies</span>
+              Selected <span>work &amp; case studies</span>
             </h2>
           </div>
 
           <div class="projects-grid">
-            <!-- Project 1 -->
+            <!-- Project 1: Insurance Uptake Classification -->
             <article class="project-card">
               <div class="project-title-row">
                 <div>
-                  <div class="project-label">Time Series</div>
-                  <h3 class="project-title">Energy Consumption Forecasting</h3>
+                  <div class="project-label">Classification · Risk / Insurance</div>
+                  <h3 class="project-title">Insurance Uptake Classification</h3>
                 </div>
-                <div class="project-pill">End-to-end Project</div>
+                <div class="project-pill">End-to-end ML</div>
               </div>
 
               <p class="project-description">
-                Built a time series forecasting pipeline to predict short-term energy consumption and
-                identify seasonal patterns, helping optimize energy usage and planning.
+                Built a classification model to predict which customers are likely to purchase
+                insurance. Worked on data cleaning, feature engineering, model comparison, and
+                evaluation to support targeted marketing and improved conversion.
               </p>
 
               <div class="project-tags">
                 <span class="project-tag">Python</span>
-                <span class="project-tag">Time Series</span>
-                <span class="project-tag">ARIMA / SARIMA</span>
-                <span class="project-tag">Forecasting Metrics</span>
-              </div>
-
-              <div class="project-footer">
-                <span>Improved forecast accuracy by ~X% vs baseline</span>
-                <div class="project-links">
-                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
-                  <a href="#" target="_blank" class="project-link secondary">Report</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="project-card">
-              <div class="project-title-row">
-                <div>
-                  <div class="project-label">Classification</div>
-                  <h3 class="project-title">Insurance Uptake Classification</h3>
-                </div>
-                <div class="project-pill">ML Pipeline</div>
-              </div>
-
-              <p class="project-description">
-                Designed a machine learning model to predict which customers are likely to purchase
-                insurance, with feature engineering and model comparison for business impact.
-              </p>
-
-              <div class="project-tags">
                 <span class="project-tag">Logistic Regression</span>
                 <span class="project-tag">Random Forest</span>
                 <span class="project-tag">Model Evaluation</span>
-                <span class="project-tag">Imbalanced Data</span>
               </div>
 
               <div class="project-footer">
-                <span>Helped target high-conversion customer segments</span>
+                <span>Helps identify high-potential customers for focused outreach.</span>
                 <div class="project-links">
                   <a href="#" target="_blank" class="project-link primary">GitHub</a>
                   <a href="#" target="_blank" class="project-link secondary">Notebook</a>
@@ -1325,33 +1283,98 @@
               </div>
             </article>
 
-            <!-- Project 3 -->
+            <!-- Project 2: Parkinson’s Disease Progression -->
             <article class="project-card">
               <div class="project-title-row">
                 <div>
-                  <div class="project-label">NLP & GenAI</div>
-                  <h3 class="project-title">Text Clustering with Sentence-BERT & UMAP</h3>
+                  <div class="project-label">Healthcare · Regression</div>
+                  <h3 class="project-title">Parkinson’s Disease Progression Prediction</h3>
                 </div>
-                <div class="project-pill">NLP · GenAI</div>
+                <div class="project-pill">ML for Health</div>
               </div>
 
               <p class="project-description">
-                Used sentence embeddings, dimensionality reduction (UMAP), and clustering to group
-                similar text responses, enabling faster insight discovery from unstructured feedback.
+                Modelled the progression of Parkinson’s disease using patient features to predict
+                relevant clinical outcomes. Compared multiple regression models and assessed
+                performance using appropriate error metrics.
               </p>
 
               <div class="project-tags">
-                <span class="project-tag">Sentence-BERT</span>
-                <span class="project-tag">UMAP</span>
-                <span class="project-tag">K-Means</span>
-                <span class="project-tag">Visualization</span>
+                <span class="project-tag">Regression</span>
+                <span class="project-tag">Feature Engineering</span>
+                <span class="project-tag">Healthcare Data</span>
+                <span class="project-tag">Error Metrics</span>
               </div>
 
               <div class="project-footer">
-                <span>Reduced analysis time by grouping similar responses</span>
+                <span>Supports data-driven understanding of disease progression.</span>
                 <div class="project-links">
                   <a href="#" target="_blank" class="project-link primary">GitHub</a>
-                  <a href="#" target="_blank" class="project-link secondary">Blog</a>
+                  <a href="#" target="_blank" class="project-link secondary">Report</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Time Series Modelling & Forecasting -->
+            <article class="project-card">
+              <div class="project-title-row">
+                <div>
+                  <div class="project-label">Time Series</div>
+                  <h3 class="project-title">Time Series Modelling &amp; Forecasting</h3>
+                </div>
+                <div class="project-pill">Forecasting</div>
+              </div>
+
+              <p class="project-description">
+                Worked on time series data to model underlying patterns and generate forecasts.
+                Explored stationarity, seasonality, model diagnostics, and forecast accuracy using
+                appropriate metrics and tests.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag">Time Series</span>
+                <span class="project-tag">ARIMA / SARIMA</span>
+                <span class="project-tag">Diagnostics</span>
+                <span class="project-tag">Forecast Accuracy</span>
+              </div>
+
+              <div class="project-footer">
+                <span>Improves planning through structured forecasting.</span>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
+                  <a href="#" target="_blank" class="project-link secondary">Summary</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: Classifying Post Comments -->
+            <article class="project-card">
+              <div class="project-title-row">
+                <div>
+                  <div class="project-label">NLP · Text Classification</div>
+                  <h3 class="project-title">Classifying Comments on Credit Card Discussions</h3>
+                </div>
+                <div class="project-pill">Text Analytics</div>
+              </div>
+
+              <p class="project-description">
+                Classified user comments on credit card discussions to understand themes and sentiment.
+                Used text preprocessing and machine learning to group comments into meaningful
+                categories for better customer insight.
+              </p>
+
+              <div class="project-tags">
+                <span class="project-tag">Text Classification</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Customer Insight</span>
+              </div>
+
+              <div class="project-footer">
+                <span>Helps summarise large volumes of customer feedback.</span>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="project-link primary">GitHub</a>
+                  <a href="#" target="_blank" class="project-link secondary">Presentation</a>
                 </div>
               </div>
             </article>
@@ -1372,39 +1395,78 @@
           </div>
 
           <div class="timeline">
-            <!-- Experience item 1 -->
+            <!-- Experience item 1: Summer Research Intern -->
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <div class="timeline-role">Data / Analytics Intern (Example)</div>
+              <div class="timeline-role">Summer Research Intern</div>
               <div class="timeline-meta">
-                <span>Company Name</span>
-                <span>Jun 2024 – Aug 2024</span>
-                <span>Remote / City</span>
+                <span>Under Prof. Hemant Kulkarni</span>
+                <span>MIT WPU, Pune</span>
               </div>
               <p class="timeline-description">
-                Worked with business and product teams to turn raw data into dashboards and actionable insights.
+                Contributed to research work under the guidance of Prof. Hemant Kulkarni at MIT World
+                Peace University, Pune, applying statistical and analytical tools to real-world data.
               </p>
               <ul class="timeline-list">
-                <li>Built dashboards using Power BI / Excel for tracking key KPIs.</li>
-                <li>Cleaned and transformed large datasets using Python & SQL.</li>
-                <li>Collaborated with stakeholders to define metrics and improve reporting.</li>
+                <li>Explored datasets with a focus on rigorous statistical analysis.</li>
+                <li>Used programming and statistical methods to derive meaningful patterns.</li>
+                <li>Strengthened my understanding of research workflow and documentation.</li>
               </ul>
             </div>
 
-            <!-- Experience item 2 -->
+            <!-- Experience item 2: Academic & Personal Projects -->
             <div class="timeline-item">
               <div class="timeline-dot"></div>
-              <div class="timeline-role">Academic & Personal Projects</div>
+              <div class="timeline-role">Academic &amp; Personal Projects in Statistics &amp; ML</div>
               <div class="timeline-meta">
+                <span>IIT Bombay &amp; BHU</span>
                 <span>Ongoing</span>
               </div>
               <p class="timeline-description">
-                Hands-on work on time series forecasting, classification models, clustering, and exploratory data analysis.
+                Hands-on work across multiple domains including insurance, healthcare, time series, and
+                text data, applying statistical thinking and machine learning to practical problems.
               </p>
               <ul class="timeline-list">
-                <li>Designed end-to-end ML workflows from EDA to model evaluation.</li>
-                <li>Experimented with different models and hyperparameters to improve performance.</li>
-                <li>Documented results and communicated trade-offs in simple language.</li>
+                <li>
+                  Designed end-to-end workflows: data cleaning, EDA, model building, evaluation, and
+                  communication of results.
+                </li>
+                <li>
+                  Worked with classification, regression, and time series models using Python and
+                  statistical tools.
+                </li>
+                <li>
+                  Documented approaches and results clearly for both technical and non-technical audiences.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience item 3: Positions of Responsibility & Activities -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-role">Positions of Responsibility &amp; Activities</div>
+              <div class="timeline-meta">
+                <span>Student Companion (ISCP) · Interview Coordinator (IPT)</span>
+              </div>
+              <p class="timeline-description">
+                In addition to academics, I actively contribute to the student community and activities.
+              </p>
+              <ul class="timeline-list">
+                <li>
+                  <strong>Student Companion, ISCP:</strong> Mentor juniors in academic and non-academic
+                  matters, helping them adjust and succeed.
+                </li>
+                <li>
+                  <strong>Interview Coordinator, IPT:</strong> Assisted with coordination of placement
+                  interviews, ensuring smooth communication and scheduling.
+                </li>
+                <li>
+                  <strong>Photography:</strong> Secured first position in the intra-department photography
+                  competition “Campus Kaleidoscope”.
+                </li>
+                <li>
+                  Actively participate in sports and hobbies like table tennis, chess, carrom, and swimming.
+                </li>
               </ul>
             </div>
           </div>
@@ -1419,41 +1481,49 @@
           <div class="section-heading">
             <div class="section-kicker">Contact</div>
             <h2 class="section-title">
-              Let’s build <span>something together</span>
+              Let’s talk about <span>data &amp; opportunities</span>
             </h2>
           </div>
 
           <div class="contact-grid">
             <div>
               <p class="contact-text">
-                Whether you have a role in mind, a project you’d like help with, or just want to chat
-                about data and analytics, feel free to reach out.
+                I’m open to discussing internships, full-time roles, collaborative projects, and
+                anything related to statistics, data science, and analytics. If you think my
+                background fits a role or you’d like to know more about my work, feel free to reach out.
               </p>
 
               <div class="contact-highlight">
-                Quickest way to reach me is via email or LinkedIn. I’m happy to discuss
-                opportunities in data & analytics, internships, or collaboration on projects.
+                Email is usually the best way to contact me. I also use LinkedIn and GitHub to share
+                projects and stay connected with the data community.
               </div>
 
               <div class="contact-list">
                 <div>
                   <div class="contact-item-label">Email</div>
-                  <div class="contact-item-value">your.email@example.com</div>
-                </div>
-                <div>
-                  <div class="contact-item-label">Location</div>
-                  <div class="contact-item-value">City, Country (Open to relocation / remote)</div>
+                  <div class="contact-item-value">
+                    <!-- TODO: replace with your real email -->
+                    aditya.pandey@example.com
+                  </div>
                 </div>
                 <div>
                   <div class="contact-item-label">LinkedIn</div>
                   <div class="contact-item-value">
-                    <a href="#" target="_blank">linkedin.com/in/your-profile</a>
+                    <!-- TODO: replace with your LinkedIn profile -->
+                    <a href="#" target="_blank">linkedin.com/in/aditya-pandey</a>
                   </div>
                 </div>
                 <div>
                   <div class="contact-item-label">GitHub</div>
                   <div class="contact-item-value">
-                    <a href="#" target="_blank">github.com/your-username</a>
+                    <!-- TODO: replace with your GitHub -->
+                    <a href="#" target="_blank">github.com/aditya-pandey</a>
+                  </div>
+                </div>
+                <div>
+                  <div class="contact-item-label">Location</div>
+                  <div class="contact-item-value">
+                    India · Open to suitable opportunities
                   </div>
                 </div>
               </div>
@@ -1463,7 +1533,7 @@
                   <strong>Résumé</strong> · PDF
                 </a>
                 <a href="#projects" class="contact-pill">
-                  <strong>Projects</strong> · View work
+                  <strong>Projects</strong> · View details
                 </a>
               </div>
             </div>
@@ -1471,11 +1541,11 @@
             <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a static demo form. Connect it to a backend or service like Formspree to receive messages.');">
               <div class="field">
                 <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Aditya Pandey" required />
+                <input id="name" type="text" placeholder="Your name" required />
               </div>
               <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="your@email.com" required />
+                <label for="email-input">Email</label>
+                <input id="email-input" type="email" placeholder="your@email.com" required />
               </div>
               <div class="field">
                 <label for="message">Message</label>
@@ -1483,8 +1553,8 @@
               </div>
               <div class="form-footer">
                 <div class="form-note">
-                  <span>Note:</span> This form is for demo only.
-                  Hook it to a service (e.g., Formspree) to receive messages.
+                  <span>Note:</span> This form is a demo.
+                  Connect it to a service (e.g., Formspree) to receive messages.
                 </div>
                 <button type="submit" class="btn-submit">
                   Send Message
