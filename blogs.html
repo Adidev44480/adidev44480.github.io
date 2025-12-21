@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blogs | Aditya Pandey</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&family=Gloria+Hallelujah&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+    <!-- GRID BG -->
+    <div class="grid-bg" id="gridBG"></div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="blogs.html" class="active">Blogs</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="hero" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="hand">notes & thoughts</div>
+            <h1 class="hero-title">Thinking <span>Aloud</span></h1>
+            <p class="hero-text">
+                Reflections on statistics, probability, and the patterns of daily life.
+            </p>
+        </div>
+    </section>
+
+    <!-- BLOG LIST -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <article class="blog-card">
+                <div class="hand" style="font-size: 0.9rem;">Oct 12, 2023</div>
+                <h2 class="project-title" style="font-size: 1.6rem; margin: 0.5rem 0;">The Beauty of The Central Limit
+                    Theorem</h2>
+                <p class="hero-text" style="font-size: 1rem; margin-bottom: 1rem;">
+                    Why does normalcy occur so often in nature? A dive into the mathematical intuition behind the CLT
+                    and why it matters.
+                </p>
+                <a href="#" class="read-more">Read Entry &rarr;</a>
+            </article>
+
+            <article class="blog-card">
+                <div class="hand" style="font-size: 0.9rem;">Sep 05, 2023</div>
+                <h2 class="project-title" style="font-size: 1.6rem; margin: 0.5rem 0;">Causality vs. Correlation</h2>
+                <p class="hero-text" style="font-size: 1rem; margin-bottom: 1rem;">
+                    Examples from spurious correlations site and how to actually prove causality in observational
+                    studies.
+                </p>
+                <a href="#" class="read-more">Read Entry &rarr;</a>
+            </article>
+
+            <article class="blog-card">
+                <div class="hand" style="font-size: 0.9rem;">Aug 20, 2023</div>
+                <h2 class="project-title" style="font-size: 1.6rem; margin: 0.5rem 0;">My First Kaggle Competition</h2>
+                <p class="hero-text" style="font-size: 1rem; margin-bottom: 1rem;">
+                    Lessons learned from overfitting, feature engineering failures, and the joy of finally climbing the
+                    leaderboard.
+                </p>
+                <a href="#" class="read-more">Read Entry &rarr;</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © <span id="year"></span> Aditya Pandey — Crafted with curiosity & statistics.
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
