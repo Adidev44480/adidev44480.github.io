@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Editor</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            color: #4e6045;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #4e6045;
+            margin-bottom: 1.5rem;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #6f8663;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4e6045;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-danger {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #b71c1c;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .item-list {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .item-content {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .success-message {
+            background: #4caf50;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .view-portfolio {
+            text-decoration: none;
+            color: #6f8663;
+            font-weight: 500;
+        }
+
+        .view-portfolio:hover {
+            text-decoration: underline;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .responsibilities {
+            margin-top: 0.5rem;
+        }
+
+        .responsibility-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .responsibility-item input {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-pen-to-square"></i> Portfolio Editor</h1>
+        <div class="subtitle">
+            <span>Edit your portfolio content without touching code</span>
+            <a href="index.html" class="view-portfolio" target="_blank">
+                <i class="fa-solid fa-eye"></i> View Portfolio
+            </a>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            <i class="fa-solid fa-check-circle"></i> Changes saved successfully!
+        </div>
+
+        <!-- Hero Section -->
+        <div class="section">
+            <h2 class="section-title">Hero Section</h2>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="heroName" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label>Tagline</label>
+                <input type="text" id="heroTagline" placeholder="Your tagline or subtitle">
+            </div>
+            <div class="form-group">
+                <label>Introduction</label>
+                <textarea id="heroIntro" placeholder="Brief introduction about yourself"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Profile Image URL</label>
+                <input type="url" id="heroImage" placeholder="https://example.com/your-photo.jpg">
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2 class="section-title">About Section</h2>
+            <div class="form-group">
+                <label>About Content</label>
+                <textarea id="aboutContent"
+                    placeholder="Write about yourself... (You can use multiple paragraphs by separating with blank lines)"
+                    style="min-height: 200px;"></textarea>
+                <small style="color: #666;">Tip: Press Enter twice to create new paragraphs</small>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="item-list" id="projectsList"></div>
+            <button class="btn btn-secondary btn-small" onclick="addProject()">
+                <i class="fa-solid fa-plus"></i> Add Project
+            </button>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="item-list" id="experienceList"></div>
+            <button class="btn btn-secondary btn-small" onclick="addExperience()">
+                <i class="fa-solid fa-plus"></i> Add Experience
+            </button>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h2 class="section-title">Contact Links</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="url" id="contactEmail" placeholder="mailto:your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>LinkedIn</label>
+                    <input type="url" id="contactLinkedIn" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>GitHub</label>
+                    <input type="url" id="contactGitHub" placeholder="https://github.com/yourusername">
+                </div>
+                <div class="form-group">
+                    <label>Resume/CV URL</label>
+                    <input type="url" id="contactResume" placeholder="https://drive.google.com/file/...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button class="btn btn-primary" onclick="saveAll()">
+                <i class="fa-solid fa-save"></i> Save All Changes
+            </button>
+            <button class="btn btn-secondary" onclick="loadContent()">
+                <i class="fa-solid fa-rotate-right"></i> Reset to Saved
+            </button>
+        </div>
+    </div>
+
+    <!-- Project Edit Modal -->
+    <div id="projectModal"
+        style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; padding: 2rem; overflow-y: auto;">
+        <div style="max-width: 700px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px;">
+            <h2 style="margin-bottom: 1.5rem; font-family: 'DM Serif Display', serif; color: #4e6045;">
+                <span id="projectModalTitle">Edit Project</span>
+            </h2>
+            <div class="form-group">
+                <label>Project Title</label>
+                <input type="text" id="editProjectTitle" placeholder="e.g., Insurance Uptake Classification">
+            </div>
+            <div class="form-group">
+                <label>Subtitle/Category</label>
+                <input type="text" id="editProjectSubtitle"
+                    placeholder="e.g., understanding customer behaviour - Classification">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="editProjectDescription" placeholder="Describe your project..."
+                    style="min-height: 120px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Summary Link</label>
+                <input type="url" id="editProjectSummary" placeholder="https://github.com/...README.md">
+            </div>
+            <div class="form-group">
+                <label>Code Link</label>
+                <input type="url" id="editProjectCode" placeholder="https://github.com/.../notebook.ipynb">
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="saveProjectEdit()">
+                    <i class="fa-solid fa-check"></i> Save Project
+                </button>
+                <button class="btn btn-secondary" onclick="closeProjectModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Edit Modal -->
+    <div id="experienceModal"
+        style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; padding: 2rem; overflow-y: auto;">
+        <div style="max-width: 700px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px;">
+            <h2 style="margin-bottom: 1.5rem; font-family: 'DM Serif Display', serif; color: #4e6045;">
+                <span id="experienceModalTitle">Edit Experience</span>
+            </h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Date/Period</label>
+                    <input type="text" id="editExpDate" placeholder="e.g., Summer 2024 or 2023–2025">
+                </div>
+                <div class="form-group">
+                    <label>Role/Position</label>
+                    <input type="text" id="editExpRole" placeholder="e.g., Summer Research Intern">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Institution/Company</label>
+                <input type="text" id="editExpInstitution" placeholder="e.g., MIT WPU · Under Prof. Name">
+            </div>
+            <div class="form-group">
+                <label>Responsibilities/Descriptions</label>
+                <div id="responsibilitiesList"></div>
+                <button class="btn btn-secondary btn-small" onclick="addResponsibility()" style="margin-top: 0.5rem;">
+                    <i class="fa-solid fa-plus"></i> Add Bullet Point
+                </button>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="saveExperienceEdit()">
+                    <i class="fa-solid fa-check"></i> Save Experience
+                </button>
+                <button class="btn btn-secondary" onclick="closeExperienceModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="content-manager.js"></script>
+</body>
+
+</html>
