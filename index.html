@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aditya Pandey | Portfolio</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&family=Gloria+Hallelujah&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+    <!-- GRID BG -->
+    <div class="grid-bg" id="gridBG"></div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+            <a href="blogs.html">Blogs</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner container">
+
+            <div class="hero-left">
+                <h1 class="hero-title">Aditya Pandey</h1>
+                <div class="hero-sub">learning to make sense of uncertain worlds</div>
+
+                <p class="hero-text">
+                    I’m pursuing an <strong>M.Sc. in Statistics (ASI)</strong> at IIT Bombay,
+                    after completing a <strong>B.Sc. (Hons) in Statistics</strong> from Banaras Hindu University.
+                    I enjoy problems where uncertainty, behaviour, and risk meet — whether that’s who might buy
+                    insurance,
+                    how a disease progresses, or what people really express in their comments.
+                </p>
+
+                <div class="hero-chips" style="display: none;">
+                    <!-- Chips removed as per request -->
+                </div>
+
+            </div>
+
+            <div class="hero-img-wrapper">
+                <!-- Replace src later -->
+                <img class="hero-img"
+                    src="C:\Users\Aditya pandey\Desktop\WhatsApp Image 2025-12-05 at 08.28.03_eea1ef07.jpg"
+                    alt="Your Photo" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+        <div class="container">
+
+            <div class="hand">a little background</div>
+            <h2 class="section-title">About <span>Me</span></h2>
+
+            <p>
+                My foundation lies in core statistics — probability, inference, linear models,
+                regression, and time series — but I’m happiest when these tools meet real-world data.
+            </p>
+
+            <p>
+                I’ve worked on projects ranging from predicting insurance uptake and modelling
+                Parkinson’s disease progression to analyzing time series patterns and classifying
+                comments from online credit card discussions. These problems blend human behaviour with
+                data, something I find fascinating.
+            </p>
+
+            <p>
+                Alongside academics, I’ve contributed to student life as a
+                <strong>Student Companion (ISCP)</strong>, mentoring juniors, and as an
+                <strong>Interview Coordinator (IPT)</strong>, helping organize placement processes.
+                I also enjoy photography — winning first place in the “Campus Kaleidoscope” competition —
+                as well as table tennis, chess, carrom, and swimming.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project-section section" id="projects">
+        <div class="container">
+
+            <div class="hand">case studies</div>
+            <h2 class="section-title">Projects & <span>Work</span></h2>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <h3 class="project-title">Insurance Uptake Classification</h3>
+                <div class="project-sub">understanding customer behaviour - Classification</div>
+                <p class="project-desc">
+                    Built a classification model to predict customers who would be interested in buying insurance.
+                    My work included data cleaning, feature engineering, comparing different models,
+                    evaluating metrics for imbalanced data, and interpreting model insights
+                    to support more focused outreach.
+                </p>
+
+                <div class="project-buttons">
+                    <a class="btn"
+                        href="https://github.com/Adidev44480/Insurance-Uptake-Classification/blob/main/README.md">Summary</a>
+                    <a class="btn"
+                        href="https://github.com/Adidev44480/Insurance-Uptake-Classification/blob/main/5_1_Health_Insurance_Uptake_Prediction.ipynb">Code</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <h3 class="project-title">Parkinson’s Disease Progression Prediction</h3>
+                <div class="project-sub">healthcare modelling - Regression</div>
+                <p class="project-desc">
+                    Modelled the progression of Parkinson’s disease using patient-level features.
+                    Compared regression approaches and evaluated predictions through clinically relevant
+                    error metrics. The work highlights the challenges and opportunities in modelling
+                    longitudinal health data.
+                </p>
+
+                <div class="project-buttons">
+                    <a class="btn"
+                        href="https://github.com/Adidev44480/Parkinson-s-Disease-Progression-Prediction/blob/main/README.md">Summary</a>
+                    <a class="btn"
+                        href="https://github.com/Adidev44480/Parkinson-s-Disease-Progression-Prediction/blob/main/Parkinson's%20Disease%20Progression%20Analysis.ipynb">Code</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <h3 class="project-title">Forecasting Household Electricity Consumption</h3>
+                <div class="project-sub">patterns over time - Time Series</div>
+                <p class="project-desc">
+                    Analysed time series to uncover structure, trends, and seasonality,
+                    then built and validated forecasting models using classical ARIMA/SARIMA frameworks.
+                    Diagnostics and error measures were used to ensure robustness.
+                </p>
+
+                <div class="project-buttons">
+                    <a class="btn" href="#your-link-here">Summary</a>
+                    <a class="btn" href="#your-link-here">Code</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project">
+                <h3 class="project-title">Classifying Credit Card Discussion Comments</h3>
+                <div class="project-sub">understanding text - NLP</div>
+                <p class="project-desc">
+                    Clustered customer discussion on Reddit on subreddit Credit Card into categories.
+                    Built classification model to allot new comments into one of the clusters.
+                    This helped summarize customer concerns and identify dominant themes useful for improving
+                    service offerings.
+                </p>
+
+                <div class="project-buttons">
+                    <a class="btn" href="#your-link-here">Summary</a>
+                    <a class="btn" href="#your-link-here">Code</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills section" id="skills" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="hand">toolkit & concepts</div>
+            <h2 class="section-title">Technical <span>Stash</span></h2>
+
+            <div class="skills-grid">
+                <!-- Statistics -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-chart-line skill-icon" style="color: var(--accent-olive);"></i>
+                    <span class="skill-label">Statistics</span>
+                </div>
+                <!-- Machine Learning -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-robot skill-icon" style="color: var(--accent-olive);"></i>
+                    <span class="skill-label">Machine Learning</span>
+                </div>
+                <!-- Deep Learning -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-network-wired skill-icon" style="color: var(--accent-olive);"></i>
+                    <span class="skill-label">Deep Learning</span>
+                </div>
+                <!-- NLP -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-comments skill-icon" style="color: var(--accent-olive);"></i>
+                    <span class="skill-label">NLP</span>
+                </div>
+                <!-- Time Series -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-arrow-trend-up skill-icon" style="color: var(--accent-olive);"></i>
+                    <span class="skill-label">Time Series</span>
+                </div>
+                <!-- R -->
+                <div class="skill-item">
+                    <i class="devicon-r-plain colored skill-icon"></i>
+                    <span class="skill-label">R</span>
+                </div>
+                <!-- Python -->
+                <div class="skill-item">
+                    <img src="C:\Users\Aditya pandey\.gemini\antigravity\brain\74139aef-1e7c-421f-b769-3cd030e2002f\python_logo_icon_1766307959486.png"
+                        class="skill-icon-img" alt="Python">
+                    <span class="skill-label">Python</span>
+                </div>
+                <!-- MySQL -->
+                <div class="skill-item">
+                    <i class="devicon-mysql-plain colored skill-icon"></i>
+                    <span class="skill-label">MySQL</span>
+                </div>
+                <!-- Excel -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-file-excel skill-icon" style="color: #217346;"></i>
+                    <span class="skill-label">Excel</span>
+                </div>
+                <!-- Word -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-file-word skill-icon" style="color: #2B579A;"></i>
+                    <span class="skill-label">Word</span>
+                </div>
+                <!-- PowerPoint -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-file-powerpoint skill-icon" style="color: #D24726;"></i>
+                    <span class="skill-label">PowerPoint</span>
+                </div>
+                <!-- Power BI -->
+                <div class="skill-item">
+                    <i class="fa-solid fa-chart-pie skill-icon" style="color: #F2C811;"></i>
+                    <span class="skill-label">Power BI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience section" id="experience" style="background: var(--bg-1);">
+        <div class="container">
+
+            <div class="hand">milestones</div>
+            <h2 class="section-title">Experience & <span>Roles</span></h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Summer 2024</div>
+                    <div class="timeline-role">Summer Research Intern</div>
+                    <div class="timeline-meta">MIT WPU · Under Prof. Hemant Kulkarni</div>
+                    <ul class="timeline-list">
+                        <li>Conducted research-oriented statistical analysis.</li>
+                        <li>Worked with real datasets and applied modelling techniques.</li>
+                        <li>Learned full cycle from research question to interpretation.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023–2025</div>
+                    <div class="timeline-role">Student Companion (ISCP)</div>
+                    <div class="timeline-meta">IIT Bombay</div>
+                    <ul class="timeline-list">
+                        <li>Mentored juniors in academic and non-academic matters.</li>
+                        <li>Provided support in transitioning to institute life.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023–2024</div>
+                    <div class="timeline-role">Interview Coordinator (IPT)</div>
+                    <div class="timeline-meta">IIT Bombay</div>
+                    <ul class="timeline-list">
+                        <li>Assisted in organizing placement interview processes.</li>
+                        <li>Liaised between students, coordinators, and recruiters.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-role">Photography — First Place</div>
+                    <div class="timeline-meta">“Campus Kaleidoscope” Competition</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+        <div class="container">
+
+            <div class="hand">let's talk</div>
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+
+            <p>For opportunities, collaborations, or conversations — here’s where you can reach me:</p>
+
+            <div class="contact-icons">
+                <a class="contact-icon-link" href="#your-email-here">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="contact-label">Email</span>
+                </a>
+                <a class="contact-icon-link" href="#your-linkedin-here">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span class="contact-label">LinkedIn</span>
+                </a>
+                <a class="contact-icon-link" href="#your-github-here">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="contact-label">GitHub</span>
+                </a>
+                <a class="contact-icon-link" href="#your-resume-link-here">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span class="contact-label">Resume</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © <span id="year"></span> Aditya Pandey — Crafted with curiosity & statistics.
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
